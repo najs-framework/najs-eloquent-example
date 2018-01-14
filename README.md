@@ -19,6 +19,8 @@ cd najs-eloquent-example
 
 npm install
 
+npm run build
+
 npm start
 ```
 
