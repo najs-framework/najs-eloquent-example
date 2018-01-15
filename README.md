@@ -13,6 +13,8 @@
 ## Installation
 
 ```bash
+npm install -g nodemon
+
 git clone https://github.com/najs-framework/najs-eloquent-example
 
 cd najs-eloquent-example
@@ -23,6 +25,10 @@ npm run build
 
 npm start
 ```
+
+## Playground
+
+You can try Najs Eloquent with your browser in [Najs Eloquent Playground](http://35.196.114.98/ide.html).
 
 ## Usage
 

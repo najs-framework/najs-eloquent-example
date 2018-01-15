@@ -1,5 +1,8 @@
+import './autoload'
 import { setupDatabase } from './bootstrap/setupDatabase'
+import { make } from 'najs'
 import { User } from './app/Models/User'
+import { UserService } from './app/Providers/User/UserService'
 
 const data = [
   { first_name: 'tony', last_name: 'stark', age: 40 },
@@ -9,6 +12,8 @@ const data = [
   { first_name: 'bruce', last_name: 'wayne', age: 40 }
 ]
 setupDatabase(async function() {
+  const service: UserService = make(UserService.className)
+
   // create 5 users
   for (const item of data) {
     const user = new User()
@@ -30,6 +35,9 @@ setupDatabase(async function() {
   if (matchedUser) {
     console.log('matchedUsers user:', matchedUser.toJson())
   }
+
+  // get users by age from service
+  console.log(await service.getUsersByAge(40))
 
   // delete all users
   User.whereNotNull('id').delete()
