@@ -27,11 +27,11 @@ setupDatabase(async function() {
   console.log('Number of users:', await User.count())
   console.log('')
 
-  const firstUser = await User.find()
+  const firstUser = await User.first()
   console.log('First user:', firstUser.toJson())
   console.log('')
 
-  const matchedUser = await User.where('last_name', 'god').find()
+  const matchedUser = await User.where('last_name', 'god').first()
   if (matchedUser) {
     console.log('matchedUsers user:', matchedUser.toJson())
   }

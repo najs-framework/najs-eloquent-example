@@ -35,8 +35,11 @@ You can try Najs Eloquent with your browser in [Najs Eloquent Playground](http:/
 You can try [Najs Eloquent](https://github.com/najs-framework/najs-eloquent) in `index.ts` file:
 
 ```typescript
+import './autoload'
 import { setupDatabase } from './bootstrap/setupDatabase'
+import { make } from 'najs'
 import { User } from './app/Models/User'
+import { UserService } from './app/Providers/User/UserService'
 
 const data = [
   { first_name: 'tony', last_name: 'stark', age: 40 },
@@ -46,6 +49,8 @@ const data = [
   { first_name: 'bruce', last_name: 'wayne', age: 40 }
 ]
 setupDatabase(async function() {
+  const service: UserService = make(UserService.className)
+
   // create 5 users
   for (const item of data) {
     const user = new User()
@@ -59,14 +64,17 @@ setupDatabase(async function() {
   console.log('Number of users:', await User.count())
   console.log('')
 
-  const firstUser = await User.find()
+  const firstUser = await User.first()
   console.log('First user:', firstUser.toJson())
   console.log('')
 
-  const matchedUser = await User.where('last_name', 'god').find()
+  const matchedUser = await User.where('last_name', 'god').first()
   if (matchedUser) {
     console.log('matchedUsers user:', matchedUser.toJson())
   }
+
+  // get users by age from service
+  console.log(await service.getUsersByAge(40))
 
   // delete all users
   User.whereNotNull('id').delete()
