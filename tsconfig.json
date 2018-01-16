@@ -1,18 +1,13 @@
 {
   "compilerOptions": {
     "module": "commonjs",
-    "target": "es6",
+    "target": "es2017",
     "experimentalDecorators": true,
     "sourceMap": true,
     "moduleResolution": "node",
     "outDir": "dist",
-    "types": [
-      "node"
-    ],
-    "lib": [
-      "es6",
-      "es2015.promise"
-    ],
+    "types": ["node"],
+    "lib": ["es2017"],
     "noImplicitReturns": true,
     "noImplicitThis": true,
     "noImplicitAny": true,
@@ -22,12 +17,6 @@
     "skipDefaultLibCheck": true,
     "skipLibCheck": true
   },
-  "include": [
-    "./**/*.ts",
-    "!./dist"
-  ],
-  "exclude": [
-    "node_modules",
-    "build"
-  ]
+  "include": ["./**/*.ts", "!./dist"],
+  "exclude": ["node_modules", "build"]
 }
