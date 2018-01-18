@@ -1,5 +1,6 @@
 import { register } from 'najs'
 import { IMongooseProvider } from 'najs-eloquent'
+import { Schema, Document, Model, model } from 'mongoose'
 const mongoose = require('mongoose')
 
 export class MongooseProvider implements IMongooseProvider {
@@ -11,6 +12,10 @@ export class MongooseProvider implements IMongooseProvider {
 
   getMongooseInstance() {
     return mongoose
+  }
+
+  createModelFromSchema<T extends Document>(modelName: string, schema: Schema): Model<T> {
+    return model<T>(modelName, schema)
   }
 }
 register(MongooseProvider, 'MongooseProvider')

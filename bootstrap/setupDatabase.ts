@@ -4,7 +4,7 @@ const mongoose = require('mongoose')
 const Bluebird = require('bluebird')
 
 export function setupDatabase(callback: any) {
-  mongoose.connect(Config.get('mongodb'))
+  mongoose.connect(Config.get('mongodb'), { useMongoClient: true })
   mongoose.Promise = Bluebird
   mongoose.connection.once('open', async () => {
     console.log('---------------------------------------------')
