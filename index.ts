@@ -40,5 +40,5 @@ setupDatabase(async function() {
   console.log(await service.getUsersByAge(40))
 
   // delete all users
-  User.whereNotNull('id').delete()
+  await User.whereNotNull('id').delete()
 })
