@@ -1,8 +1,7 @@
 import { User } from '../../Models/User'
 import { UserRepository } from './UserRepository'
-import { autoload } from 'najs'
+import { register, autoload } from 'najs-binding'
 import { Collection } from 'collect.js'
-import { register } from 'najs/dist/lib/core/register'
 
 @register()
 export class UserService {

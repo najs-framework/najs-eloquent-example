@@ -1,6 +1,6 @@
 import { User } from '../../Models/User'
 import { Collection } from 'collect.js'
-import { register } from 'najs'
+import { register } from 'najs-binding'
 
 // this is a feature of najs
 @register()

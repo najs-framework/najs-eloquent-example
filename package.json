@@ -16,8 +16,8 @@
     "collect.js": "^4.0.2",
     "config": "^1.29.2",
     "mongoose": "^4.7.31",
-    "najs": "^0.2.5",
-    "najs-eloquent": "^0.2.10",
+    "najs-binding": "^1.0.0",
+    "najs-eloquent": "^0.2.13",
     "sinon": "^4.1.3"
   },
   "devDependencies": {

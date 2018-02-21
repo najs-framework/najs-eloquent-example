@@ -1,6 +1,6 @@
 import './autoload'
 import { setupDatabase } from './bootstrap/setupDatabase'
-import { make } from 'najs'
+import { make } from 'najs-binding'
 import { User } from './app/Models/User'
 import { UserService } from './app/Providers/User/UserService'
 
