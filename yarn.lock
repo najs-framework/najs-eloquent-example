@@ -2602,20 +2602,19 @@ muri@1.3.0:
   version "1.3.0"
   resolved "https://registry.yarnpkg.com/muri/-/muri-1.3.0.tgz#aeccf3db64c56aa7c5b34e00f95b7878527a4721"
 
-najs-binding@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/najs-binding/-/najs-binding-1.0.0.tgz#882c3e67058edd09c85d60846d6709ecd12a761d"
+najs-binding@^1.3.0:
+  version "1.3.0"
+  resolved "https://registry.yarnpkg.com/najs-binding/-/najs-binding-1.3.0.tgz#ae2ebf5cdd31bfd32ff2f8c048250b5c8ba30d5c"
   dependencies:
     lodash "^4.17.4"
 
-najs-eloquent@^0.2.13:
-  version "0.2.13"
-  resolved "https://registry.yarnpkg.com/najs-eloquent/-/najs-eloquent-0.2.13.tgz#35e6ad73194c8b4036886139fa26a3b6100adb53"
+najs-eloquent@^0.2.15:
+  version "0.2.15"
+  resolved "https://registry.yarnpkg.com/najs-eloquent/-/najs-eloquent-0.2.15.tgz#0d300a1852d1b23b90e1bd250d7b2cbd7a5a8e7e"
   dependencies:
     lodash "^4.17.4"
     moment "^2.20.1"
     mongoose "^5.0.0-rc0"
-    najs-binding "^1.0.0"
     pluralize "^7.0.0"
 
 nan@^2.3.0:
