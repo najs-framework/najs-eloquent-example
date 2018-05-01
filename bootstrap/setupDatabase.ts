@@ -1,12 +1,12 @@
-import './MongooseProvider'
+// import './MongooseProvider'
 import * as Config from 'config'
-const mongoose = require('mongoose')
+import { MongooseProvider } from 'najs-eloquent'
 const Bluebird = require('bluebird')
 
 export function setupDatabase(callback: any) {
-  mongoose.connect(Config.get('mongodb'), { useMongoClient: true })
-  mongoose.Promise = Bluebird
-  mongoose.connection.once('open', async () => {
+  MongooseProvider.getMongooseInstance().connect(Config.get('mongodb'))
+  MongooseProvider.getMongooseInstance().Promise = Bluebird
+  MongooseProvider.getMongooseInstance().connection.once('open', async () => {
     console.log('---------------------------------------------')
     console.log('Welcome to Najs Eloquent playground')
     console.log('---------------------------------------------')

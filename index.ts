@@ -13,7 +13,6 @@ const data = [
 ]
 setupDatabase(async function() {
   const service: UserService = make(UserService.className)
-
   // create 5 users
   for (const item of data) {
     const user = new User()
@@ -26,10 +25,11 @@ setupDatabase(async function() {
   // You can play around in here
   console.log('Number of users:', await User.count())
   console.log('')
-
   const firstUser = await User.first()
-  console.log('First user:', firstUser.toJson())
-  console.log('')
+  if (firstUser) {
+    console.log('First user:', firstUser.toJson())
+    console.log('')
+  }
 
   const matchedUser = await User.where('last_name', 'god').first()
   if (matchedUser) {
@@ -37,7 +37,8 @@ setupDatabase(async function() {
   }
 
   // get users by age from service
-  console.log(await service.getUsersByAge(40))
+  const filterByAgeResult = await service.getUsersByAge(40)
+  console.log(filterByAgeResult.pluck('first_name', 'id').all())
 
   // delete all users
   await User.whereNotNull('id').delete()
